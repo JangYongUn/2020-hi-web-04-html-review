@@ -29,7 +29,9 @@ $("#sample")
 document.getElementById("sample")
 ```
 
-0. Selector(선택자)
+### 0. Selector(선택자)
+[Selector의 모든것](https://www.w3schools.com/jquery/jquery_ref_selectors.asp)
+	- find() children() eq() siblings() parent() parents() next() prev()
 ```js
 // 태그나 객체를 $() 로 실행하면 jQuery 객체가 리턴된다.
 $(".a")
@@ -41,30 +43,94 @@ $('<div>A</div>')
 // $()[0] => 자바스크립트가 된다
 $("#sample")[0] // 자바스크립트
 ```
-1. Animation
+
+### 1. Animation
+	[애니메이션의 모든것](https://www.w3schools.com/jquery/jquery_ref_effects.asp)
+    - hide() show() fadeIn() fadeOut() slideUp() slideDown() toggle() fadeToggle() slideToggle() animate()
+
+
+### 2. DOM(Document Object Model)
+	[DOM의 모든것](https://www.w3schools.com/jquery/jquery_ref_html.asp)
+    - append() appendTo() prepend() prependTo() remove() empty(), html(), text()
 ```js
-hide(300, function(){  })
-show()
-fadeIn()
-fadeOut()
-slideUp()
-slideDown()
-toggle()
-fadeToggle()
-slideToggle()
-animate()
-
-
+$('.a').append('<div>A</div>').click() 		// return $('.a')
+$('<div>A</div>').appendTo('.a').click() 	// return $('<div>A</div>')
 ```
-2. DOM(Document Object Model)
 
-3. Attribute
+### 3. Attribute
+	- Getter: attr('속성')
+	- Setter: attr('속성', '값')
+	- Getter: data('키');
+	- Setter: data('키', '값');
+```html
+<div class="a" id="A"></div>
+```
+```js
+$(".a").attr("id");	// "A"
+$(".a").attr("id", "B")	// id="B", jQuery
+$(".a").attr({
+	id: "C",
+	style: "background-color: #ccc"
+});
+```
 
-4. CSS
+### 4. CSS
+    - Getter : css('속성')
+    - Setter : css('속성', '값')
+    - Setter : css({'속성', '값', ...})
+    - addClass('클래스명') removeClass('클래스명') toggleClass('클래스명')
+    - hasClass('클래스명') //true or false로 나타남.
 
-5. Dimension
+### 5. Dimension
+    [크기의 모든것](https://www.w3schools.com/jquery/jquery_dimensions.asp)
+	- width() height() 
+	- innerWidth() innerHeight() 
+	- outerWidth() outerHeight() 
+	- outerWidth(true) outerHeight(true)
+	- offset() => return {top: 200, left: 100}
+	- offset().top / offset().left
+	- position().top / position().left
+	- scrollTop()
 
-6. Event
+### 6. Event
+[이벤트의 모든것](https://www.w3schools.com/jquery/jquery_ref_events.asp)
+	- click(), hover(), mouseover(), mouseleave(), mouseenter(), keyup(), keydown(), resize(), scroll() ... 
 
-7.getter/setter
+### 7. getter/setter
     -   html(), text(), css(), attr(),
+
+
+# Javascript Review
+## 프로그래밍은 변수와 함수의 집합니다.
+
+### 변수
+1. Primmitive(원시) Type
+	- String, Number, Boolean, undefined
+2. Reference(참조) Type
+	- Array, Object, Null
+    
+```js
+var arr = [1, 2, 3];
+var arr2 = arr;
+console.log(arr, arr2); // [1, 2, 3] (3) [1, 2, 3]
+arr.push(4)
+arr.push(5)
+console.log(arr, arr2); // [1, 2, 3, 4, 5] (5) [1, 2, 3, 4, 5]
+
+// 0, false, null, undefined => false
+```
+
+### 2020-12-09 숙제
+#### 구구단을 만드세요.
+2단 2 x 1 =2 2 x 2 = 4 ...
+3단
+.
+.
+.
+
+    2단        3단       4단      5단 ...
+2 x 1 = 2   3 x 1 = 3
+2 x 2 = 4
+.
+.
+.
